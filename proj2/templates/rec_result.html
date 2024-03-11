@@ -1,0 +1,50 @@
+<!-- movieapp/templates/recommendation_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .movie-details {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Movie Recommendation</h2>
+    <div class="movie-details">
+        {% if recommended_movie %}
+            <img src=https://image.tmdb.org/t/p/w500{{ recommended_movie.poster_path }} alt="{{ recommended_movie.original_title }} Poster">
+            <h3>{{ recommended_movie.original_title }}</h3>
+            <p>{{ recommended_movie.overview }}</p>
+            <p>Release Date: {{ recommended_movie.release_date }}</p>
+            <p>Vote Average: {{ recommended_movie.vote_average }}</p>
+        {% else %}
+            <p>No recommendation available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

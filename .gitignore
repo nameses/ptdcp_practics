@@ -1,2 +1,8 @@
 .venv/
 .idea/
+mysite/
+proj2/__pycache__/
+proj2/movieapp/__pycache__/
+proj2/movieapp/migrations/__pycache__/
+proj2/proj2/__pycache__/
+proj2/config.py
